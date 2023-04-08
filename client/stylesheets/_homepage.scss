@@ -1,4 +1,5 @@
 .homepage {
+	background-color: $darkgreen;
 	display: flex;
 	flex-direction: column;
 	text-align: left;
@@ -6,11 +7,11 @@
 	.img {
 	  width: 100%;
 	  height: auto;
-	  object-fit: cover;
+	  object-fit: fill;
 	  max-height: 50vh;
 	}
 	.about {
-	  max-width: 800px;
+	  width: 60%;
 	  padding: 2rem;
 	  background-color: $peach;
 	  box-shadow: 0 4px 6px $black;
@@ -24,24 +25,30 @@
 	}
 	.home-wrapper {
 		display: flex;
-		flex-direction: nowrap;
+		flex-direction: column;
 		overflow-x: auto;
 	}
 	}
   
 	.step {
 	  margin-bottom: 1.5rem;
-	  background-color: lighten($peach, 4%);
+	  background-color: lighten($white, 7%);
 	  border: 1px solid $orange;
 	  border-radius: 0.5rem;
 	  padding: 1.5rem;
 	  min-width: 250px;
 	  margin-bottom: 1rem;
+	  p {
+		margin: 1rem 0rem;
+	  }
+	  li {
+		margin: 0.5rem;
+	  }
 	}
   
 	.example-habit-building {
 	  display: flex;
-	  flex-direction: nowrap;
+	  flex-direction: column;
 	  overflow-x: auto;
 	  margin-top: 2rem;
 	  margin-bottom: 1rem;
