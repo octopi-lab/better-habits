@@ -1,18 +1,28 @@
-import React, {Component, element } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard.jsx';
+import React, { Component } from 'react';
+import { Routes, Route, Link} from 'react-router-dom';
+
+import Home from './components/Home.jsx'; 
+import DashboardContainer from './components/DashboardContainer.jsx';
 
 
+function App() {
 
-class App extends Component {
+  return (
+    <div>
+      <main>
+      <Routes> 
+        <Route  path = '/' element={<Home/>}></Route>
+        {/* <Link></Link> */}
+        <Route path='/dashboard' element={<DashboardContainer/>}></Route>
+        {/* <Route  path = '' element ={< />}></Route>
+        <Route  path = '' element ={< />}></Route>
+        <Route  path = '' element ={< />}></Route>
+        <Route  path = '' element ={< />}></Route> */}
 
-   render() {
-    return (
-        <Routes>
-            <Route path='/' element={<Dashboard/>}/>
-        </Routes>
-        );   
-    };
+      </Routes>
+      </main>
+    </div>
+  );   
 };
 
 export default App; 
