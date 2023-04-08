@@ -17,18 +17,17 @@ function DashboardContainer() {
   // })
 
   return (
-  <>
-    <sidebar>
+  <div className="dashboard-container">
+    <div className='habit-post'>
+      <HabitPost/>
+    </div>
+		<sidebar>
       <div className='Sidebar'>
         <h3>Sidebar</h3>
         <Sidebar/> 
       </div>
     </sidebar>
-    <div className='habit-post'>
-      <h3>Add New Habit</h3>
-      <HabitPost/>
-    </div>
-  </>
+  </div>
   )
 }
 
