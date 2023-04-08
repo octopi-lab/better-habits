@@ -15,7 +15,7 @@ class Navbar extends Component {
 			</nav>
 			<div className="reg-buttons">
 				<p><Link to="/login">Login</Link></p>
-				<p><Link to="/register">Register</Link></p>
+				<p><Link to="/signup">Register</Link></p>
 			</div>
 		</header>
 		)
