@@ -15,6 +15,10 @@ app.use(cors());
 
 
 // serve index.html
+<<<<<<< HEAD
+=======
+// statically serve everything in the build folder on the route '/build'
+>>>>>>> dev
   // app.use('/build', express.static(path.join(__dirname, '../build')));
   // serve index.html on the route '/'
   app.get('/', (req, res) => {
@@ -24,11 +28,17 @@ app.use(cors());
   // route handlers 
 
   //Login/sign up paths
+<<<<<<< HEAD
   app.use('/user', userRouter)
   
+=======
+  app.post('/signup', userRouter);
+
+  app.post('/login', userRouter);
+>>>>>>> dev
 
   //managing habits paths
-  app.use('/habit', habitRouter);
+
 
   //managing changes in habit characteristics
   app.use('/update', charRouter);

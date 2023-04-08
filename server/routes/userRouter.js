@@ -1,6 +1,6 @@
 const express = require('express');
-const userRouter = express.Router();
-const userController = '../controllers/userController';
+const userRouter = express.Router(); 
+const userController = require('../controllers/userController');
 
 userRouter.post('/signup', userController.createUser,
     userController.setSSIDCookie,
