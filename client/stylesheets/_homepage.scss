@@ -1,0 +1,61 @@
+.homepage {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	align-items: center;
+	.img {
+	  width: 100%;
+	  height: auto;
+	  object-fit: cover;
+	  max-height: 50vh;
+	}
+	.about {
+	  max-width: 800px;
+	  padding: 2rem;
+	  background-color: $peach;
+	  box-shadow: 0 4px 6px $black;
+	  border-radius: 1rem;
+	  margin-top: -5rem;
+		
+	.about-description {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.home-wrapper {
+		display: flex;
+		flex-direction: nowrap;
+		overflow-x: auto;
+	}
+	}
+  
+	.step {
+	  margin-bottom: 1.5rem;
+	  background-color: lighten($peach, 4%);
+	  border: 1px solid $orange;
+	  border-radius: 0.5rem;
+	  padding: 1.5rem;
+	  min-width: 250px;
+	  margin-bottom: 1rem;
+	}
+  
+	.example-habit-building {
+	  display: flex;
+	  flex-direction: nowrap;
+	  overflow-x: auto;
+	  margin-top: 2rem;
+	  margin-bottom: 1rem;
+		.step-next {
+			background-color:lighten($peach, 4%);
+			border-radius: 0.5rem;
+			padding: 1.5rem;
+			min-width: 250px;
+			margin-bottom: 1rem;
+		}
+	}
+	li {
+		list-style: none;
+	}
+  }
+  
+  
