@@ -10,7 +10,7 @@ const apiRouter = require('./routes/api')
 // parsing request for json // urlencoded // cors 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// only needed if I can actually get connected to a API 
+// only needed if we reach out to other websites 
 app.use(cors());
 
 
