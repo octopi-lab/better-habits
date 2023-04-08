@@ -6,7 +6,7 @@ class Home extends Component {
       <main>
         <div className="image-container">
           <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Image 1" />
-          <p class = "about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, doloremque consequatur, corporis nobis veritatis dolor, hic iure laudantium eveniet blanditiis omnis facere. Quo obcaecati fugit asperiores aliquam assumenda, magnam accusantium!
+          <p className= "about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, doloremque consequatur, corporis nobis veritatis dolor, hic iure laudantium eveniet blanditiis omnis facere. Quo obcaecati fugit asperiores aliquam assumenda, magnam accusantium!
           Nemo repellendus mollitia veritatis ducimus reiciendis deserunt! Tenetur, atque. Assumenda illum at architecto tempore soluta nihil fuga voluptas odit fugit impedit repudiandae, laborum expedita, ducimus, eveniet sunt fugiat magnam veniam?
           Numquam, totam nobis pariatur quia iusto, non nulla doloribus aut tempora consequuntur ad veniam magnam deserunt eos quisquam. Amet ipsam corrupti illo aliquid beatae deserunt quae ratione. Dolores, eum nemo.
           Amet similique neque tenetur! Architecto, quos. Optio, itaque earum iste fuga repellendus corporis voluptatum enim ullam reprehenderit illo cumque facere. Possimus temporibus tenetur similique perspiciatis itaque amet ratione, nihil sapiente.
@@ -27,7 +27,7 @@ class Home extends Component {
           Error accusantium maxime excepturi nemo eius incidunt asperiores itaque, adipisci commodi architecto nihil deleniti! Labore, laboriosam culpa tenetur quam vero fugiat veniam dolorum et? Soluta quam recusandae perferendis omnis. Ea?
           Temporibus non amet odit quo nulla soluta consectetur a in similique rem enim, itaque voluptas officiis ea perspiciatis cumque quisquam dolore, laborum harum ipsa quaerat architecto laboriosam reiciendis? Perspiciatis, laudantium.</p>
         </div>
-        <div class = "side bar"> 
+        <div className= "side bar"> 
 
         </div>
       </main>
