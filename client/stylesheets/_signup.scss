@@ -1,0 +1,55 @@
+.signup-box {
+  height: 300px;
+  width: 500px;
+  background: $lightgreen;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 150px;
+}
+
+form {
+    display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input[type=text], input[type=password] {
+  background: $peach;
+  color: $black;
+  border: none;
+  height: 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+input[type=text] {
+  margin-top: 80px;
+}
+
+input[type=password] {
+  margin-top: 20px;
+}
+
+input[type=submit] {
+  background: $darkgreen;
+  color: $peach;
+  padding: 10px 10px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1vw;
+  margin-top: 20px;
+  border: 1px solid $darkgreen;
+  box-shadow: 3px 3px 5px 2px $darkgreen-dark;
+}
+
+input[type=submit]:hover {
+  background: $darkgreen-light;
+  transition: 0.5s;
+}
+
+input[type=submit]:active {
+  transform: translate(5px, 5px);
+}

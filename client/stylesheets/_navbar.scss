@@ -1,5 +1,5 @@
 .navbar {
-	background-color: $lightgreen;
+	background-color: $darkgreen;
 	color: $white;
 	display: flex;
 	justify-content: space-between;
@@ -14,7 +14,7 @@
 		font-size: 2rem;
 		font-weight: 700;
 		text-decoration: none;
-		color: $darkgreen;
+		color: $lightgreen;
 		margin-right: 2rem;
 	}
 	ul {
@@ -33,7 +33,7 @@
 			text-align: center;
 			transition: background-color 0.7s;
 			&:hover {
-				background-color: $darkgreen;
+				background-color: $lightgreen;
 			}
 			a {
 				text-decoration: none;
