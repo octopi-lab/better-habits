@@ -5,7 +5,7 @@ const PORT = 3000;
 const cors = require('cors') 
 
 
-const apiRouter = require('./routes/api')
+const userRouter = require('./routes/userRouter')
 
 // parsing request for json // urlencoded // cors 
 app.use(express.json());
@@ -18,13 +18,21 @@ app.use(cors());
 // statically serve everything in the build folder on the route '/build'
   app.use('/build', express.static(path.join(__dirname, '../build')));
   // serve index.html on the route '/'
-  app.get('/', (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
-  });
+  // app.get('/', (req, res) => {
+  //   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
+  // });
 
   // route handlers 
-  app.use('/api', apiRouter);
 
+  //Login/sign up paths
+  app.post('/signup', userRouter,
+    cookieController.setSSIDCookie,
+    sessionController.startSession);
+
+  app.post('/login', userRouter);
+
+  //managing habits paths
+  app.use('/habit', habitRouter);
 
 
   // catch-all route handler for any requests to an unknown route

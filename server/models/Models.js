@@ -24,6 +24,8 @@ mongoose.connect(MONGO_URI, {
   const Habit = mongoose.model('habit', habitSchema);
 
   const userSchema = new Schema({
+    username: String,
+    password: String,
     habits : [habitSchema]
   });
   const User = mongoose.model('user', userSchema)
