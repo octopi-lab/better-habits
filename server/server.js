@@ -16,7 +16,7 @@ app.use(cors());
 
 // serve index.html
 // statically serve everything in the build folder on the route '/build'
-  app.use('/build', express.static(path.join(__dirname, '../build')));
+  // app.use('/build', express.static(path.join(__dirname, '../build')));
   // serve index.html on the route '/'
   // app.get('/', (req, res) => {
   //   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
@@ -25,14 +25,12 @@ app.use(cors());
   // route handlers 
 
   //Login/sign up paths
-  app.post('/signup', userRouter,
-    cookieController.setSSIDCookie,
-    sessionController.startSession);
+  app.post('/signup', userRouter);
 
   app.post('/login', userRouter);
 
   //managing habits paths
-  app.use('/habit', habitRouter);
+
 
 
   // catch-all route handler for any requests to an unknown route
