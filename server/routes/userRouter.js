@@ -2,18 +2,16 @@ const express = require('express');
 const userRouter = express.Router(); 
 const userController = require('../controllers/userController');
 
-userRouter.post('/signup', userController.createUser, (req, res) => {
-    res.status(200)
+userRouter.post('/signup', userController.createUser,
+    // userController.setSSIDCookie,
+    // userController.startSession,
+    (req, res) => {res.status(200).json(res.locals.newUser)});
+
+userRouter.post('/login', userController.verifyUser, 
+    userController.setSSIDCookie,
+    userController.startSession,
+    (req,res) => {
+    res.status(200).json(res.locals.returnUser)
 });
-
-userRouter.post('/login', userController.verifyUser, (req,res) => {
-    res.status(200)
-});
-
-
-
-
-
-
 
 module.exports = userRouter;
