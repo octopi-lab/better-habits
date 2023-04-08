@@ -1,10 +1,12 @@
 @use 'sass:color';
 
 $darkgreen: #006D77;
+$green: #4caf50;
 $lightgreen: #83C5BE;
 $white: #EDF6F9;
 $peach: #FFDDD2;
 $orange: #E29578;
 $black: #2E323B;
+$red: #e53935;
 $darkgreen-dark: color.scale(#006D77, $lightness: -40%);
 $darkgreen-light: color.scale(#006D77, $lightness: 7%);

@@ -5,7 +5,7 @@ function Home() {
 
     return (
       <main className="homepage">
-          <img className="img" src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Image 1" />
+          <img className="img" src="https://images.squarespace-cdn.com/content/v1/54072d28e4b0c1de7269335a/1468593975785-5RPGNEIZ7RAQSTHMK0QI/image-asset.gif" alt="Image 1" />
           <div className= "about">
 			<div className="about-description">
 			<h1>Actually Build Your Habits!</h1>
@@ -21,17 +21,17 @@ function Home() {
 				<p>This allows for flexibility and opportunities for consistency</p>
 			</div>
 			<div className="step">
-				<h3>Step 3: Define points criteria for the habit and the alternative actions</h3>
-				<p>Point allocations:</p>
+				<h2>Step 3: Define points criteria for habit and alternative actions</h2>
+				<p><strong>Point allocations:</strong></p>
 				<ul>
-					<li>1 point: Show Up</li>
-					<li>2 points: Easy</li>
-					<li>3 points: Medium</li>
-					<li>4 points: Hard</li>
+					<li><strong>1 point:</strong> Show Up</li>
+					<li><strong>2 points:</strong> Easy</li>
+					<li><strong>3 points:</strong> Medium</li>
+					<li><strong>4 points:</strong> Hard</li>
 				</ul>
 			</div>
 			<div className="step">
-				<h3>Step 4: Go achieve your goals!</h3>
+				<h2>Step 4: Go achieve your goals!</h2>
 				<p>Seize the day and record your progress~</p>
 			</div>
 			</div>
@@ -51,47 +51,47 @@ function Home() {
 						<li>20 pullups</li>
 					</ul>
 				</div>
-			<div className="step">
-				<h2>Step 3</h2>
-				<p>Go to the gym</p>
 				<div className="step">
+					<h2>Step 3</h2>
 					<ul>
-						<li>1 point: Show Up</li>
-						<li>2 points: 30 minutes</li>
-						<li>3 points: 1 hour</li>
-						<li>4 points: 2 hours</li>
-					</ul>
-				</div>
-				<ul>
-					<li>Go for a walk</li>
-					<div className="step">
-					<ul>
-						<li>1 point: Walk Around the Block for 15 minutes</li>
-						<li>2 points: Walk Around the Block for 30 minutes</li>
-						<li>3 points: Walk Around the Block for 1 hour</li>
-						<li>4 points: Walk Around the Block for 1.5 hours</li>
-					</ul>
-					</div>
-					<li>Do pushups and situps</li>
-					<div className="step">
+						<li className='step-habit'>Go to the gym</li>
+						<div className="step">
 						<ul>
-							<li>1 point: Do 20 Pushups and 20 Situps</li>
-							<li>2 points: Do 50 pushups and 50 situps</li>
-							<li>3 points: Do 80 pushups and 80 situps</li>
-							<li>4 points: Do 100 pushups and 100 situps</li>
+							<li><strong>1 point:</strong> Show Up</li>
+							<li><strong>2 points:</strong> 30 minutes</li>
+							<li><strong>3 points:</strong> 1 hour</li>
+							<li><strong>4 points:</strong> 2 hours</li>
 						</ul>
-					</div>
-					<li>Play with the dog, no sitting down!</li>
-					<div className='step'>
+						</div>
+						<li className='step-habit'>Go for a walk</li>
+						<div className="step">
 						<ul>
-							<li>1 point: Play with the dog for 20 minutes</li>
-							<li>2 points: Play with the dog for 30 minutes</li>
-							<li>3 points: Play with the dog for 40 minutes</li>
-							<li>4 points: Play with the dog for 1 hour</li>
+							<li><strong>1 point:</strong> Walk Around the Block for 15 minutes</li>
+							<li><strong>2 points:</strong> Walk Around the Block for 30 minutes</li>
+							<li><strong>3 points:</strong> Walk Around the Block for 1 hour</li>
+							<li><strong>4 points:</strong> Walk Around the Block for 1.5 hours</li>
 						</ul>
-					</div>
-				</ul>
-		  	</div>
+						</div>
+						<li className='step-habit'>Do pushups and situps</li>
+						<div className="step">
+							<ul>
+								<li><strong>1 point:</strong> Do 20 Pushups and 20 Situps</li>
+								<li><strong>2 points:</strong> Do 50 pushups and 50 situps</li>
+								<li><strong>3 points:</strong> Do 80 pushups and 80 situps</li>
+								<li><strong>4 points:</strong> Do 100 pushups and 100 situps</li>
+							</ul>
+						</div>
+						<li className='step-habit'>Play with the dog, no sitting down!</li>
+						<div className='step'>
+							<ul>
+								<li><strong>1 point:</strong> Play with the dog for 20 minutes</li>
+								<li><strong>2 points:</strong> Play with the dog for 30 minutes</li>
+								<li><strong>3 points:</strong> Play with the dog for 40 minutes</li>
+								<li><strong>4 points:</strong> Play with the dog for 1 hour</li>
+							</ul>
+						</div>
+					</ul>
+		  		</div>
 			</div>
 		</div>
       </main>
