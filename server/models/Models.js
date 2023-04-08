@@ -35,5 +35,6 @@ mongoose.connect(MONGO_URI, {
     cookieId: { type: String, required: true, unique: true },
     createdAt: { type: Date, expires: 300, default: Date.now }
   });
+  const Session = mongoose.model('session', sessionSchema)
 
 module.exports = {Habit, User, Session};

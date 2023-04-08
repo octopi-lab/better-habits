@@ -24,3 +24,5 @@ habitController.newHabit = (req,res,next) => {
         next(err);
     }
 }
+
+module.exports = habitController;
