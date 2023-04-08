@@ -49,24 +49,58 @@ const handleInput = (e) => {
 
   return (
   <>
-  <button onClick={handleClick}>Add New habit</button>
+  <button className="add-habit-button" onClick={handleClick}>Add New habit</button>
   {isClicked  && (
-      <form>
-      <label htmlFor='habit-name'>Habit Name:</label>
-      <input type='text' id='habit-name' value={habit.name} name="name"  onChange ={handleInput}required></input>
-      <label>Alternatives</label>
-      <input value={habit.alternatives} onChange ={handleInput} name="alternatives" required></input>
-      <label htmlFor='habit-description'>Description</label>
-      <input value={habit.description} onChange ={handleInput} name="description" required></input>
-      <select value={habit.type} onChange ={handleInput} name="type" required>
-          <option value="Growth">Growth</option>
-          <option value="Health">Health</option>
-          <option value="Productivity">Productivity</option>
-          <option value="Self-Care">Self-Care</option>
-          <option value="Social">Social</option>
-      </select>
-      <button onClick={handleClick}>Cancel</button>  
-      <button type="submit" onClick={handleSubmit}>Create Habit</button>  
+      <form className='habit-post'>
+				<div className="habit-post-wrapper">
+					<label>Habit Name</label>
+     			<input type='text' id='habit-name' value={habit.name} name="name"  onChange ={handleInput} required placeholder="-- example: Run every day --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Level 0</label>
+				<input value={habit.level0} onChange={handleInput} name="level0" required placeholder="-- example: run 1 miles --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Level 1</label>
+					<input value={habit.level1} onChange={handleInput} name="level1" required placeholder="-- example: run 2 mile--"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Level 2</label>
+					<input value={habit.level2} onChange={handleInput} name="level2" required placeholder="-- example: run 4 miles --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Level 3</label>
+					<input value={habit.level3} onChange={handleInput} name="level3" required placeholder="-- example: run 6 miles --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+      		<label>Alternative Action 1</label>
+     	 	<input value={habit.alternatives1} onChange ={handleInput} name="alternatives1" required placeholder="-- example: go for a walk --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Alternative Action 2</label>
+					<input value={habit.alternatives2} onChange ={handleInput} name="alternatives2" required placeholder="-- example: go for a hike --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Alternative Action 3</label>
+     		 	<input value={habit.alternatives3} onChange ={handleInput} name="alternatives3" required placeholder="-- example: go biking --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Message to Yourself</label>
+      		<input value={habit.description} onChange ={handleInput} name="description" placeholder="-- example: I want to run a marathon some day. Let's do it!--"></input>
+				</div>
+				<div className="wrapper3">
+      		<select value={habit.type} onChange ={handleInput} name="type" required>
+          	<option value="Growth">Growth</option>
+          	<option value="Health">Health</option>
+         		<option value="Productivity">Productivity</option>
+         		<option value="Self-Care">Self-Care</option>
+         		<option value="Social">Social</option>
+     			</select>
+				<div className="habit-post-wrapper2">
+      		<button className="button" type="submit" onClick={handleSubmit}>Create Habit</button>
+					<button className="button cancel" onClick={handleClick}>Cancel</button>  
+				</div>
+				</div>
       </form>
   )}
   </>
@@ -75,6 +109,27 @@ const handleInput = (e) => {
 }
 
 export default HabitPost;
+
+/*
+HABIT OBJECT MOCKUP
+
+habit = {
+	name: "RUNNING EVERY DAY",
+	level0: 'run 0.5 miles',
+	level1: 'run 1 mile',
+	level2: 'run 2 miles',
+	level3: 'run 3 miles',
+	alternatives1: 'go for a walk',
+	alternatives2: 'go for a bike ride',
+	alternatives3: 'go for a swim',
+	description: 'I want to run every day because I want to be healthy',
+	type: 'Health'
+}
+
+
+
+*/
+
 
 
 // function Car() {
