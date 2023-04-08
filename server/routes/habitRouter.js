@@ -1,16 +1,15 @@
 const express = require('express');
 const habitRouter = express.Router();
 
-habitRouter.get('/habit', habitController.getHabits, (req,res) =>{
+
+habitRouter.patch('/:username', habitController.newHabit, (req,res) =>{
+    res.status(200).json(res.locals.newHabit);
+});
+
+habitRouter.delete('/:username', habitController.deleteHabit, (req, res) => {
     res.status(200);
 });
 
-habitRouter.post('/habit', habitController.newHabit, (req,res) =>{
-    res.status(200);
-});
-
-habitRouter.patch('/habit', habitController.changeHabitValue, (req,res) =>{
-    res.status(200);
-});
+habitRouter.
 
 module.exports = habitRouter;

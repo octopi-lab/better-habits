@@ -16,19 +16,24 @@ mongoose.connect(MONGO_URI, {
   const habitSchema = new Schema({
     title: String,
     description:{
+      description:String,
       category:String,
-      alt: [String]
+      options: [String]
     },
-    date:{}
+    scores:{}
   });
   const Habit = mongoose.model('habit', habitSchema);
 
   const userSchema = new Schema({
     username: String,
     password: String,
-    habits : [habitSchema]
+    habits : []
   });
   const User = mongoose.model('user', userSchema)
 
+  const sessionSchema = new Schema({
+    cookieId: { type: String, required: true, unique: true },
+    createdAt: { type: Date, expires: 300, default: Date.now }
+  });
 
-module.exports = {Habit, User};
+module.exports = {Habit, User, Session};
