@@ -21,12 +21,9 @@ function DashboardContainer() {
     <div className='habit-post'>
       <HabitPost/>
     </div>
-		<sidebar>
-      <div className='Sidebar'>
-        <h3>Sidebar</h3>
-        <Sidebar/> 
-      </div>
-    </sidebar>
+		<div className="sidebar">
+				<Sidebar/>
+		</div>
   </div>
   )
 }
