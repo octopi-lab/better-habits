@@ -1,0 +1,34 @@
+.sidebar {
+	padding: 0rem 0.5rem;
+	width: 50%;
+
+}
+
+.sidebar-container {
+	background-color: $white;
+	border-radius: 1rem;
+  margin: 1rem 2rem;
+  padding: 1rem 2rem;
+	font-size: 1rem;
+	align-items: left;
+	
+	h2 {
+		display: table-row;
+		font-size: 1.3rem;
+	}
+  .total-points {
+    display: table;
+    width: 80%;
+		margin: 2rem 0;
+  }
+  h2:before {
+    content: attr(data-label);
+    display: table-cell;
+    text-align: left;
+		padding: 1rem 0;
+    white-space: nowrap;
+		border-bottom: 1px solid darken($white, 10%);
+
+  }
+
+}
