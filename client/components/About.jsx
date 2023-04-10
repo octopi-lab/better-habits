@@ -23,12 +23,14 @@ function About() {
 			<div className="step">
 				<h2>Step 3: Define points criteria for habit and alternative actions</h2>
 				<p><strong>Point allocations:</strong></p>
+				<div className="step">
 				<ul>
 					<li><strong>1 point:</strong> Show Up</li>
 					<li><strong>2 points:</strong> Easy</li>
 					<li><strong>3 points:</strong> Medium</li>
 					<li><strong>4 points:</strong> Hard</li>
 				</ul>
+				</div>
 			</div>
 			<div className="step">
 				<h2>Step 4: Go achieve your goals!</h2>
@@ -54,7 +56,7 @@ function About() {
 				<div className="step">
 					<h2>Step 3</h2>
 					<ul>
-						<li className='step-habit'>Points Allocation</li>
+						<li className='step-habit'><strong>Points Allocation</strong></li>
 						<div className="step">
 						<ul>
 							<li><strong>1 point:</strong> At least show up to the gym</li>
