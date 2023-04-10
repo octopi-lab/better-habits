@@ -17,11 +17,13 @@ habitController.newHabit = async (req,res,next) => {
     } = req.body;
     
     const newHab = {level1, level2, level3, level4, alternatives1, alternatives2, alternatives3, message, type, totalScore:0, dailyScore:0, score:{}} 
-    let update = await User.findOneAndUpdate({username: req.params.username}, {$set: {habits: {[name]: newHab}}}, {new: true});
-                                // User.findOneAndUpdate({username: req.params.username}, {habits:{$set: {[name]: newHab}}}, {new: true});
+    let update = await User.findOneAndUpdate({username: req.params.username}, {$set: {[`habits.${name}`]: newHab}}, {new: true});
+    // let update = await User.findOneAndUpdate({username: req.params.username}, {habits:{{[name]: newHab}}}, {new: true});
+    // [`habits.${name}`]
+    
     console.log(update);
     res.locals.updatedUser = update;
-    next();
+    return next();
 }
 
 module.exports = habitController;
