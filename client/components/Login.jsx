@@ -5,9 +5,11 @@ function Login() {
   return (
     <section className='login-box'>
       <form method='POST' action='/login'>
+				<h1>Log In</h1>
+
         <input name='username' type='text' placeholder='Username'></input>
         <input name='password' type='password' placeholder='Password'></input>
-        <input type='submit' value='Log In'></input>
+        <input type='submit' value='login'></input>
       </form>
     </section>
   )
