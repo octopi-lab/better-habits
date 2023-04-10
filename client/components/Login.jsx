@@ -21,7 +21,7 @@ function Login() {
 
         <input name='username' type='text' placeholder='Username'></input>
         <input name='password' type='password' placeholder='Password'></input>
-        <input type='submit' value='login'></input>
+        <input type='submit' value='Log In'></input>
       </form>
     </section>
   )
