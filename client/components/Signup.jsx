@@ -8,7 +8,7 @@ function Signup() {
 				<h1>Sign Up</h1>
         <input name='username' type='text' placeholder='Username'></input>
         <input name='password' type='password' placeholder='Password'></input>
-          <input type='submit' value='signup'></input>
+          <input type='submit' value='Sign Up'></input>
       </form>
     </section>
   )

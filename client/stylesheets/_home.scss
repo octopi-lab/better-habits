@@ -5,6 +5,10 @@
 	.welcome {
 		text-align: left;
 		padding: 50px;
+		background: $lightgreen;
+		border-radius: 40px;
+		margin-top: 5vh;
+		margin-left: 5vw;
 	}
 	
 	h1 {
@@ -16,11 +20,19 @@
 		font-size: 36px;
 		margin-top: 40px;
 	}
+
+	iframe {
+		margin-top: 4vh;
+	}
 	
 	p {
 		font-size: 24px;
 		line-height: 1.5;
 		margin-top: 20px;
 		margin-bottom: 20px;
+	}
+	.logsign-forms{
+		margin-top: 9vh;
+		margin-right: 4vw;
 	}
 }
