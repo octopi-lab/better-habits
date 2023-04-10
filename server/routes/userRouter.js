@@ -11,7 +11,7 @@ userRouter.post('/login', userController.verifyUser,
     // userController.setSSIDCookie,
     // userController.startSession,
     (req,res) => {
-    res.status(200).redirect('/about')
+    res.status(200).redirect('/dashboard')
 });
 
 module.exports = userRouter;
