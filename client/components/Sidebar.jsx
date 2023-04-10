@@ -6,7 +6,7 @@ function Sidebar () {
 				<h1>Score Board</h1>
 				<div className='total-points'>
 					<h2 data-label="Daily:">5</h2>
-					<h2 data-label="Monthly:">7</h2>
+					<h2 data-label="Total:">7</h2>
 				</div>
 			</div>
     )

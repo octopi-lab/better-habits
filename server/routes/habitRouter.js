@@ -3,12 +3,12 @@ const habitRouter = express.Router();
 const habitController = require('../controllers/habitController.js')
 
 habitRouter.patch('/:username', habitController.newHabit, (req,res) =>{
-    res.status(200).json(res.locals.newHabit);
+    res.status(200).json(res.locals.updatedUser);
 });
 
-// habitRouter.delete('/:username', habitController.deleteHabit, (req, res) => {
-//     res.status(200);
-// });
+habitRouter.patch('/:username/:habitName', habitController.record, (req, res) => {
+    res.status(200).json(res.locals.update);
+})
 
 
 module.exports = habitRouter;

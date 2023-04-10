@@ -57,20 +57,20 @@ const handleInput = (e) => {
      			<input type='text' id='habit-name' value={habit.name} name="name"  onChange ={handleInput} required placeholder="-- example: Run every day --"></input>
 				</div>
 				<div className='habit-post-wrapper'>
-					<label>Level 0</label>
-				<input value={habit.level0} onChange={handleInput} name="level0" required placeholder="-- example: run 1 miles --"></input>
-				</div>
-				<div className='habit-post-wrapper'>
 					<label>Level 1</label>
-					<input value={habit.level1} onChange={handleInput} name="level1" required placeholder="-- example: run 2 mile--"></input>
+				<input value={habit.level1} onChange={handleInput} name="level0" required placeholder="-- example: run 1 miles --"></input>
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 2</label>
-					<input value={habit.level2} onChange={handleInput} name="level2" required placeholder="-- example: run 4 miles --"></input>
+					<input value={habit.level2} onChange={handleInput} name="1" required placeholder="-- example: run 2 mile--"></input>
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 3</label>
-					<input value={habit.level3} onChange={handleInput} name="level3" required placeholder="-- example: run 6 miles --"></input>
+					<input value={habit.level3} onChange={handleInput} name="2" required placeholder="-- example: run 4 miles --"></input>
+				</div>
+				<div className='habit-post-wrapper'>
+					<label>Level 4</label>
+					<input value={habit.level4} onChange={handleInput} name="3" required placeholder="-- example: run 6 miles --"></input>
 				</div>
 				<div className='habit-post-wrapper'>
       		<label>Alternative Action 1</label>
@@ -86,7 +86,7 @@ const handleInput = (e) => {
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Message to Yourself</label>
-      		<input value={habit.description} onChange ={handleInput} name="description" placeholder="-- example: I want to run a marathon some day. Let's do it!--"></input>
+      		<input value={habit.message} onChange ={handleInput} name="description" placeholder="-- example: I want to run a marathon some day. Let's do it!--"></input>
 				</div>
 				<div className="wrapper3">
       		<select value={habit.type} onChange ={handleInput} name="type" required>
@@ -115,10 +115,10 @@ HABIT OBJECT MOCKUP
 
 habit = {
 	name: "RUNNING EVERY DAY",
-	level0: 'run 0.5 miles',
-	level1: 'run 1 mile',
-	level2: 'run 2 miles',
-	level3: 'run 3 miles',
+	1: 'run 0.5 miles', 
+	2: 'run 1 mile',
+	3: 'run 2 miles',
+	4: 'run 3 miles',
 	alternatives1: 'go for a walk',
 	alternatives2: 'go for a bike ride',
 	alternatives3: 'go for a swim',

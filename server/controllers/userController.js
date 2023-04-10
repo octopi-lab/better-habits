@@ -1,15 +1,15 @@
-const {User, Habit, Session} = require('../models/Models');
+const {User, Session} = require('../models/Models');
 const userController = {};
 const bcrypt = require('bcryptjs');
 
 
-userController.createUser = async(req,res,next) => {
+userController.createUser = async (req,res,next) => {
     
     let { username, password } = req.body;
     console.log('made it into the controller for create user')
     try{
       console.log('checking username')
-        User.findOne({ user: username }).exec()
+        let checker = await User.findOne({ user: username }).exec()
           .then(data => {
             if (data){
                 console.log('username exists already')

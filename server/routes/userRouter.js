@@ -8,8 +8,8 @@ userRouter.post('/signup', userController.createUser,
     (req, res) => {res.status(200).json(res.locals.newUser)});
 
 userRouter.post('/login', userController.verifyUser, 
-    userController.setSSIDCookie,
-    userController.startSession,
+    // userController.setSSIDCookie,
+    // userController.startSession,
     (req,res) => {
     res.status(200).json(res.locals.returnUser)
 });

@@ -4,5 +4,4 @@ const scoreController = require('../controllers/scoreController');
 
 
 
-
 module.exports = scoreRouter; 

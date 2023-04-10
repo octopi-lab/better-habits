@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') })
 
-const MONGO_URI = 'mongodb+srv://ericlewisdunn:elephant1@cluster0.xowczqe.mongodb.net/?retryWrites=true&w=majority'//sd;''
+const MONGO_URI = `mongodb+srv://ericlewisdunn:elephant1@cluster0.xowczqe.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose.connect(MONGO_URI, {
   // options for the connect method to parse the URI
@@ -13,21 +15,13 @@ mongoose.connect(MONGO_URI, {
   .catch(err => console.log(err));
   
   const Schema = mongoose.Schema;
-  const habitSchema = new Schema({
-    title: String,
-    description:{
-      description:String,
-      category:String,
-      options: [String]
-    },
-    scores:{}
-  });
-  const Habit = mongoose.model('habit', habitSchema);
 
   const userSchema = new Schema({
     username: String,
     password: String,
-    habits : []
+    total: {type: Number, default: 0}, //logic for adding points to total and daily before storing in habits array
+    daily: {type: Number, default: 0}, //add logic for reset daily to 0 every day
+    habits : {type: {}, default: {test:{1:'Ihatelife<3'}}}
   });
   const User = mongoose.model('user', userSchema)
 
@@ -37,4 +31,4 @@ mongoose.connect(MONGO_URI, {
   });
   const Session = mongoose.model('session', sessionSchema)
 
-module.exports = {Habit, User, Session};
+module.exports = { User, Session };
