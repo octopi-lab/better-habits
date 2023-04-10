@@ -9,6 +9,7 @@ function DashboardContainer() {
   
   //setUsername Somewhere
   const [username, setUsername] = useState('user1');
+  const [habitname, sethabitname] = useState('')
   const [dailyScore, setDailyScore] = useState(0);
   const [totalScore, setTotalScore] = useState(0);
   const [habitData, setHabitData] = useState([]);
@@ -21,6 +22,18 @@ function DashboardContainer() {
     setHabitData([...Object.entries(parsedData.habits)]);
     console.log('OBJECT ENTRIES LOOL', parsedData.habits)
     return;
+  }
+  const incrementScore = async (e, item, index) => {
+    sethabitname(`${item[0]}`);
+    console.log('made it into increment store ')
+    const request = await fetch (`/habit/${username}/${habitname}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/JSON'
+      },
+      body: JSON.stringify(index + 1)
+    });
+    getData();
   }
   useEffect(() => {
     getData();
@@ -38,16 +51,24 @@ function DashboardContainer() {
         </div>
     </div>
     <div className="existing-habits">
-      <h1>This is the Existing Habits Section</h1>
       {habitData.map((item, index) => {
         {console.log('THIS IS MY ITEM', item)}
         return (
-          <div className='habitEntries' key = {item.name}>
+          <div className='habitEntries' key = {item[0]}>
+            <div className="big-content">
+              <h1>{item[0]}</h1>
+              <h2>{item[1].message}</h2>
+              <h3>Total All Time: {item[1].totalScore}</h3>
+            </div>
             <div className="button-wrappers">
-              <button className='entry-button'> <div className='num'>1</div> {item[1].level1}</button>
-              <button className='entry-button'> <div className='num'>2</div> {item[1].level2}</button>
-              <button className='entry-button'> <div className='num'>3</div> {item[1].level3}</button>
-              <button className='entry-button'> <div className='num'>4</div> {item[1].level4}</button>
+              <button className='entry-button' onClick={(e) => incrementScore(e, item, index)}> <div className='num'>1</div> {item[1].level1}</button>
+              <button className='entry-button' onClick={(e) => incrementScore(e, item, index)}> <div className='num'>2</div> {item[1].level2}</button>
+              <button className='entry-button' onClick={(e) => incrementScore(e, item, index)}> <div className='num'>3</div> {item[1].level3}</button>
+              <button className='entry-button' onClick={(e) => incrementScore(e, item, index)}> <div className='num'>4</div> {item[1].level4}</button>
+              {/* // <button className='entry-button'> <div className='num'>1</div> {item[1].level1} </button>
+              // <button className='entry-button'> <div className='num'>2</div> {item[1].level2}</button>
+              // <button className='entry-button'> <div className='num'>3</div> {item[1].level3} </button>
+              // <button className='entry-button'> <div className='num'>4</div> {item[1].level4}</button> */}
             </div>
           </div>
         )
