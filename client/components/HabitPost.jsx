@@ -58,7 +58,7 @@ const handleInput = (e) => {
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 1</label>
-				<input value={habit.level1} onChange={handleInput} name="level0" required placeholder="-- example: run 1 miles --"></input>
+				<input value={habit.level1} onChange={handleInput} name="level1" required placeholder="-- example: run 1 miles --"></input>
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 2</label>
