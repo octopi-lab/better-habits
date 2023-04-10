@@ -5,9 +5,10 @@ const PORT = 3000;
 const cors = require('cors') 
 
 
-const userRouter = require('./routes/userRouter')
-const habitRouter = require('./routes/habitRouter')
-// const charRouter = require('./routes/scoreRouter')
+const dotenv = require('dotenv').config() //.env config try?
+
+const userRouter = require('./routes/userRouter');
+const habitRouter = require('./routes/habitRouter');
 
 // parsing request for json // urlencoded // cors 
 app.use(express.json());
@@ -28,12 +29,8 @@ app.use(cors());
   //Login/sign up paths
   app.use('/user', userRouter)
   
-
   //managing habits paths
   app.use('/habit', habitRouter);
-
-  //managing changes in habit characteristics
-  // app.use('/api/update', charRouter);
 
   // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Hmmmmm I think you entered the wrong url...'));

@@ -2,13 +2,21 @@ const express = require('express');
 const habitRouter = express.Router();
 const habitController = require('../controllers/habitController.js')
 
-habitRouter.patch('/:username', habitController.newHabit, (req,res) =>{
-    res.status(200).json(res.locals.newHabit);
+//SCORE INCREMENTOR
+habitRouter.patch('/:username/:name', habitController.score, (req, res) => {
+    res.status(200).json(res.locals.update)
 });
 
-// habitRouter.delete('/:username', habitController.deleteHabit, (req, res) => {
-//     res.status(200);
-// });
+// GET USER INFO
+habitRouter.get('/:username/getUserInfo', habitController.getUserInfo, (req,res) => {
+    res.status(200).json(res.locals.userInfo);
+})
+
+
+//ADD NEW HABIT
+habitRouter.patch('/:username', habitController.newHabit, (req,res) =>{
+    res.status(200).json(res.locals.updatedUser);
+});
 
 
 module.exports = habitRouter;

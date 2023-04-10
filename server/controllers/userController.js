@@ -1,9 +1,9 @@
-const {User, Habit, Session} = require('../models/Models');
+const {User, Session} = require('../models/Models');
 const userController = {};
 const bcrypt = require('bcryptjs');
 
 
-userController.createUser = async(req,res,next) => {
+userController.createUser = async (req,res,next) => {
     
     let { username, password } = req.body;
     console.log('made it into the controller for create user')
