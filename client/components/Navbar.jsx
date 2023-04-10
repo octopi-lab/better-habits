@@ -13,10 +13,10 @@ class Navbar extends Component {
 					<li><Link to="/friends">Friends</Link></li>
 				</ul>
 			</nav>
-			<div className="reg-buttons">
+			{/* <div className="reg-buttons">
 				<p><Link to="/login">Login</Link></p>
 				<p><Link to="/signup">Register</Link></p>
-			</div>
+			</div> */}
 		</header>
 		)
 	}

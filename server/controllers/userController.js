@@ -9,11 +9,12 @@ userController.createUser = async (req,res,next) => {
     console.log('made it into the controller for create user')
     try{
       console.log('checking username')
-        let checker = await User.findOne({ user: username }).exec()
+        User.findOne({ username: username }).exec()
           .then(data => {
             if (data){
                 console.log('username exists already')
-                window.location.reload();
+                // window.location.reload();
+                // alert("Username already exists!!");
             }
             else{
               console.log('making password')
@@ -34,30 +35,32 @@ userController.createUser = async (req,res,next) => {
     }
 }
 
+
+// previously near-working condition
 userController.verifyUser = (req,res,next) =>{
 
   const { username, password } = req.body;
-  
-  try{
-    bcrypt.hash(password, 10, (err, hash) => {
-      User.findOne({username: username, password: hash})
+  console.log('inside verifyUser')
+   User.findOne({username: username})
         .then((data) => {
-          if (data !== null) {
+          console.log('data: ', data)
+          console.log("data.pass ",data.password)
+          return bcrypt.compare(password, data.password)})
+        .then((pwStatus) => {
+          console.log('pwstatus: ', pwStatus);
+          if (pwStatus) {
+            console.log('login successful')
             return next();
           } else {
-            res.locals.returnUser = data;
+            console.log('user not found')
             return res.redirect('/login');
           }
+        }).catch((error) => {
+          console.log('err: ', error)
         })
-        .catch((err) => {
-          return next({err: 'Error during login process'});
-        })
-    })
-  }
-  catch(err){
-      next(err);
-  }
-}
+      }
+
+
 
 userController.setSSIDCookie = (req, res, next) => {
   console.log('made it into the controller for setSSID')
@@ -65,9 +68,9 @@ userController.setSSIDCookie = (req, res, next) => {
   const pw = req.body.password;
 
   User.findOne({username: un})
-    .then((docs) => {
-      if(bcrypt.compare(pw, docs.password)) {
-        res.cookie('ssid', docs._id, { httpOnly: true })
+    .then((data) => {
+      if(bcrypt.compare(pw, data.password)) {
+        res.cookie('ssid', data._id, { httpOnly: true })
       }
       return next();
     })
@@ -91,7 +94,7 @@ userController.startSession = (req, res, next) => {
 
   User.findOne({username: un})
     .then((data) => {
-      if (docs !== null && bcrypt.compare(pw, docs.password)) Session.create({cookieId: data._id});
+      if (data !== null && bcrypt.compare(pw, data.password)) Session.create({cookieId: data._id});
       return next();
     })
     .catch((err) => {
