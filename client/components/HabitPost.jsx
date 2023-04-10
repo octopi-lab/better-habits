@@ -1,16 +1,24 @@
 import React, {Component, element, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 function HabitPost (props) {
+
+  const {username} = useParams();
 
     
   // decleare isClicked -- use UseState 
   const [isClicked, setIsClicked] = useState(false); 
   const [habit, setHabit] = useState({
-    name: "", 
-    alternatives: "", 
-    description: "", 
-    type: "",
+    name:"",
+	level1: "", 
+	level2: "", 
+	level3: "", 
+	level4: "", 
+	alternatives1: "",
+	alternatives2: "",
+	alternatives3: "",
+	message: "", 
+	type: "",
   });
   // create function for our handleClick (tied to our button)
     //  updated isClicked to true 
@@ -25,28 +33,29 @@ function HabitPost (props) {
 
 
 
-const handleSubmit = (e) => {
-console.log(habit)
-e.preventDefault();
-fetch('../api/newHabit', {
-        method: 'POST',
-        body: JSON.stringify(habit), // need to assign a newHabit 
-        headers: { 'Content-Type': 'application/json'}
-    })
-    .then(res => res.json())
-    .then (data => {
-    })
-}
+	const handleSubmit = (e) => {
+	console.log(habit)
+	e.preventDefault();
+	// NEED TO PASS IN PARAM HERE ---------------------------------------
+	fetch(`/habit/${username}`, {
+			method: 'PATCH',
+			body: JSON.stringify(habit), // need to assign a newHabit 
+			headers: { 'Content-Type': 'application/json'}
+		})
+		.then(res => res.json())
+		.then (data => {
+		})
+	}
 // console.log(habit.name)
 // console.log(habit.alternatives)
-const handleInput = (e) => {
-    const {name, value} = e.target
-    setHabit(previousState => {
-      return {...previousState, [name]: value}
-    })
-}
+	const handleInput = (e) => {
+		const {name, value} = e.target
+		setHabit(previousState => {
+		return {...previousState, [name]: value}
+		})
+	}
 
-
+  
   return (
   <>
   <button className="add-habit-button" onClick={handleClick}>Add New habit</button>
@@ -58,19 +67,19 @@ const handleInput = (e) => {
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 1</label>
-				<input value={habit.level1} onChange={handleInput} name="level0" required placeholder="-- example: run 1 miles --"></input>
+					<input value={habit.level1} onChange={handleInput} name="level1" required placeholder="-- example: run 2 mile--"></input>
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 2</label>
-					<input value={habit.level2} onChange={handleInput} name="1" required placeholder="-- example: run 2 mile--"></input>
+					<input value={habit.level2} onChange={handleInput} name="level2" required placeholder="-- example: run 4 miles --"></input>
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 3</label>
-					<input value={habit.level3} onChange={handleInput} name="2" required placeholder="-- example: run 4 miles --"></input>
+					<input value={habit.level3} onChange={handleInput} name="level3" required placeholder="-- example: run 6 miles --"></input>
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Level 4</label>
-					<input value={habit.level4} onChange={handleInput} name="3" required placeholder="-- example: run 6 miles --"></input>
+				<input value={habit.level4} onChange={handleInput} name="level4" required placeholder="-- example: run 1 miles --"></input>
 				</div>
 				<div className='habit-post-wrapper'>
       		<label>Alternative Action 1</label>
@@ -86,7 +95,7 @@ const handleInput = (e) => {
 				</div>
 				<div className='habit-post-wrapper'>
 					<label>Message to Yourself</label>
-      		<input value={habit.message} onChange ={handleInput} name="description" placeholder="-- example: I want to run a marathon some day. Let's do it!--"></input>
+      		<input value={habit.message} onChange ={handleInput} name="message" placeholder="-- example: I want to run a marathon some day. Let's do it!--"></input>
 				</div>
 				<div className="wrapper3">
       		<select value={habit.type} onChange ={handleInput} name="type" required>
@@ -97,7 +106,7 @@ const handleInput = (e) => {
          		<option value="Social">Social</option>
      			</select>
 				<div className="habit-post-wrapper2">
-      		<button className="button" type="submit" onClick={handleSubmit}>Create Habit</button>
+      		<button className="button" onClick={handleSubmit}>Create Habit</button>
 					<button className="button cancel" onClick={handleClick}>Cancel</button>  
 				</div>
 				</div>
@@ -122,40 +131,8 @@ habit = {
 	alternatives1: 'go for a walk',
 	alternatives2: 'go for a bike ride',
 	alternatives3: 'go for a swim',
-	description: 'I want to run every day because I want to be healthy',
+	message: 'I want to run every day because I want to be healthy',
 	type: 'Health'
 }
 
-
-
 */
-
-
-
-// function Car() {
-//   const [car, setCar] = useState({
-//     brand: "Ford",
-//     model: "Mustang",
-//     year: "1964",
-//     color: "red"
-//   });
-
-//   const updateColor = () => {
-//     setCar(previousState => {
-//       return { ...previousState, color: "blue" }
-//     });
-//   }
-
-//   return (
-//     <>
-//       <h1>My {car.brand}</h1>
-//       <p>
-//         It is a {car.color} {car.model} from {car.year}.
-//       </p>
-//       <button
-//         type="button"
-//         onClick={updateColor}
-//       >Blue</button>
-//     </>
-//   )
-// }
