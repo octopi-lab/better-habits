@@ -17,49 +17,36 @@ habitController.newHabit = async (req,res,next) => {
     } = req.body;
     
     const newHab = {level1, level2, level3, level4, alternatives1, alternatives2, alternatives3, message, type, totalScore:0, dailyScore:0, score:{}} 
-    let update = await User.findOneAndUpdate({username: req.params.username}, {$set: {[`habits.${name}`]: newHab}}, {new: true});
-    // let update = await User.findOneAndUpdate({username: req.params.username}, {habits:{{[name]: newHab}}}, {new: true});
-    // [`habits.${name}`]
-    
+    let update = await User.findOneAndUpdate({username: req.params.username}, {$set: {[`habits.${name}`]: newHab}}, {new: true});    
     console.log(update);
     res.locals.updatedUser = update;
     return next();
 }
 
-module.exports = habitController;
-
-
-
-// habitController.record = async (req, res, next) => {
-//     const { username, name } = req.params;
-//     const { score } = req.body; 
-//     let update = await User.findOneAndUpdate({username: username}); //$inc increments by a certain value
-//     update.username.total += score;
-//     update.username.daily += score;
-//     update.habits[name].totalScore += score;
-//     update.habits[name].dailyScore += score;
-//     update.habits[name].score[new Date()] = score;
-//     res.locals.update = update;
-//     next();
-// }
-
-
-/*
-HABIT OBJECT MOCKUP
-
-habit = {
-	name: "RUNNING EVERY DAY",
-	1: 'run 0.5 miles', 
-	2: 'run 1 mile',
-	3: 'run 2 miles',
-	4: 'run 3 miles',
-	alternatives1: 'go for a walk',
-	alternatives2: 'go for a bike ride',
-	alternatives3: 'go for a swim',
-	description: 'I want to run every day because I want to be healthy',
-	type: 'Health'
+habitController.score = async (req, res, next) => {
+    const { username, name } = req.params;
+    const { score } = req.body;
+    const date = new Date().toISOString().slice(0,10);
+    console.log(score);
+    console.log(name);
+    let update = await User.findOneAndUpdate({username: username}, {$inc: {
+        total: score,
+        daily: score,
+        [`habits.${name}.totalScore`]: score,
+        [`habits.${name}.dailyScore`]: score,
+        [`habits.${name}.score.${date}`]: score
+    }});
+    console.log(update);
+    res.locals.update = update;
+    return next();
 }
 
-
-
-*/
+habitController.getUserInfo = async (req, res, next) => {
+    const {username} = req.params;
+    console.log('MY USERNAME', username)
+    const userInfo = await User.findOne({username:username});
+    res.locals.userInfo = userInfo;
+    console.log('WHO AM I', userInfo)
+    return next();
+}
+module.exports = habitController;

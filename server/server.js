@@ -9,7 +9,6 @@ const dotenv = require('dotenv').config() //.env config try?
 
 const userRouter = require('./routes/userRouter');
 const habitRouter = require('./routes/habitRouter');
-const scoreRouter = require('./routes/scoreRouter');
 
 // parsing request for json // urlencoded // cors 
 app.use(express.json());
@@ -32,10 +31,6 @@ app.use(cors());
   
   //managing habits paths
   app.use('/habit', habitRouter);
-
-  //managing changes in habit scores
-  app.use('/score', scoreRouter);
-
 
   // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Hmmmmm I think you entered the wrong url...'));

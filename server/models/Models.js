@@ -21,7 +21,7 @@ mongoose.connect(MONGO_URI, {
     password: String,
     total: {type: Number, default: 0}, //logic for adding points to total and daily before storing in habits array
     daily: {type: Number, default: 0}, //add logic for reset daily to 0 every day
-    habits : {type: {}, default: {test:{1:'Ihatelife<3'}}}
+    habits : {type: {}}
   });
   const User = mongoose.model('user', userSchema)
 
