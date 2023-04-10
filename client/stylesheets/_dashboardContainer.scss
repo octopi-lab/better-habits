@@ -2,4 +2,40 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+
+}
+
+.existing-habits {
+	padding: 0rem 0.5rem;
+	background-color: red;
+
+	.habitEntries {
+		background-color: $white;
+		border-radius: 1rem;
+		margin: 1rem 2rem;
+		padding: 1rem 2rem;
+		font-size: 1rem;
+		align-items: left;
+	}
+	.button-wrappers {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 20%;
+
+		.entry-button {
+			display: flex;
+			flex-direction: row;
+			background-color: $green;
+			border-radius: 1rem;
+
+			.num {
+				border-radius: 3rem;
+				background-color: blue;
+				margin: 1rem 1rem;
+				padding: 1rem 1rem;
+			}
+		}
+	}
+	
 }

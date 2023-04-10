@@ -27,8 +27,8 @@ habitController.score = async (req, res, next) => {
     const { username, name } = req.params;
     const { score } = req.body;
     const date = new Date().toISOString().slice(0,10);
-    console.log(score);
-    console.log(name);
+    // console.log(score);
+    // console.log(name);
     let update = await User.findOneAndUpdate({username: username}, {$inc: {
         total: score,
         daily: score,
@@ -36,7 +36,7 @@ habitController.score = async (req, res, next) => {
         [`habits.${name}.dailyScore`]: score,
         [`habits.${name}.score.${date}`]: score
     }});
-    console.log(update);
+    // console.log(update);
     res.locals.update = update;
     return next();
 }
@@ -46,7 +46,7 @@ habitController.getUserInfo = async (req, res, next) => {
     console.log('MY USERNAME', username)
     const userInfo = await User.findOne({username:username});
     res.locals.userInfo = userInfo;
-    console.log('WHO AM I', userInfo)
+    // console.log('WHO AM I', userInfo)
     return next();
 }
 module.exports = habitController;
