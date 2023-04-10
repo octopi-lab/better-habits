@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Login() {
   return (
     <section className='login-box'>
-      <form method='POST' action='/login'>
+      <form method='POST' action='/user/login'>
 				<h1>Log In</h1>
 
         <input name='username' type='text' placeholder='Username'></input>
