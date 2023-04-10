@@ -47,48 +47,21 @@ function About() {
 					<p>If I can't go to the gym, my alternate habits are:</p>
 					<ul>
 						<li>Go for a walk</li>
-						<li>Do 20 pushups and 20 situps</li>
-						<li>20 pullups</li>
+						<li>Pushups and situps</li>
+						<li>Play with the dog!</li>
 					</ul>
 				</div>
 				<div className="step">
 					<h2>Step 3</h2>
 					<ul>
-						<li className='step-habit'>Go to the gym</li>
+						<li className='step-habit'>Points Allocation</li>
 						<div className="step">
 						<ul>
-							<li><strong>1 point:</strong> Show Up</li>
+							<li><strong>1 point:</strong> At least show up to the gym</li>
 							<li><strong>2 points:</strong> 30 minutes</li>
 							<li><strong>3 points:</strong> 1 hour</li>
 							<li><strong>4 points:</strong> 2 hours</li>
 						</ul>
-						</div>
-						<li className='step-habit'>Go for a walk</li>
-						<div className="step">
-						<ul>
-							<li><strong>1 point:</strong> Walk Around the Block for 15 minutes</li>
-							<li><strong>2 points:</strong> Walk Around the Block for 30 minutes</li>
-							<li><strong>3 points:</strong> Walk Around the Block for 1 hour</li>
-							<li><strong>4 points:</strong> Walk Around the Block for 1.5 hours</li>
-						</ul>
-						</div>
-						<li className='step-habit'>Do pushups and situps</li>
-						<div className="step">
-							<ul>
-								<li><strong>1 point:</strong> Do 20 Pushups and 20 Situps</li>
-								<li><strong>2 points:</strong> Do 50 pushups and 50 situps</li>
-								<li><strong>3 points:</strong> Do 80 pushups and 80 situps</li>
-								<li><strong>4 points:</strong> Do 100 pushups and 100 situps</li>
-							</ul>
-						</div>
-						<li className='step-habit'>Play with the dog, no sitting down!</li>
-						<div className='step'>
-							<ul>
-								<li><strong>1 point:</strong> Play with the dog for 20 minutes</li>
-								<li><strong>2 points:</strong> Play with the dog for 30 minutes</li>
-								<li><strong>3 points:</strong> Play with the dog for 40 minutes</li>
-								<li><strong>4 points:</strong> Play with the dog for 1 hour</li>
-							</ul>
 						</div>
 					</ul>
 		  		</div>
