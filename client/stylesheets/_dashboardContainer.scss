@@ -1,0 +1,84 @@
+.dashboard-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.existing-habits {
+	.big-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		h1 {
+			font-size: 3rem;
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+			color: $black;
+			
+		}
+		h2 {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+			color:lighten($orange,5%);
+			font-style: italic;
+		}
+		h3 {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+			color: $black;
+			font-weight: bold;
+		}
+	}
+	.habitEntries {
+		background-color: $white;
+		border-radius: 1rem;
+		margin: 1rem 2rem;
+		padding: 1rem 2rem;
+		font-size: 1rem;
+		display: flex;
+		justify-content: space-between;
+
+		.big-content {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.button-wrappers {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.5rem;
+		width: 30%;
+
+		.entry-button {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			background-color: $green;
+			border-radius: 1rem;
+			padding: 0.5rem 1rem;
+			justify-content: flex-start;
+			transition: background-color 0.5s, transform 0.5s;
+			.num {
+				border-radius: 50%;
+				background-color: lighten($green,10%);
+				margin: 0rem 1rem;
+				padding: 0.2rem;
+				width: 3rem;
+				height: 3rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-weight: bold;
+			}
+
+			&:hover {
+				background-color:darken($orange,10%);
+				transform: translateY(-3px);
+				cursor: pointer;
+			}
+		}
+	}
+	
+}

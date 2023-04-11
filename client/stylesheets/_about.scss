@@ -1,0 +1,67 @@
+.aboutpage {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	align-items: center;
+	.img {
+	  width: 100%;
+	  height: auto;
+	  object-fit: fill;
+	  max-height: 50vh;
+	}
+	.about {
+	  width: 60%;
+	  padding: 2rem;
+	  background-color: $white;
+	  box-shadow: 0 4px 6px $black;
+	  border-radius: 1rem;
+	  margin-top: -5rem;
+		
+	.about-description {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.about-wrapper {
+		display: flex;
+		flex-direction: column;
+		overflow-x: auto;
+	}
+	}
+  
+	.step {
+	  margin-bottom: 1.5rem;
+	  background-color: lighten($white, 7%);
+	  border: 1px solid $orange;
+	  border-radius: 0.5rem;
+	  padding: 1.5rem;
+	  min-width: 250px;
+	  margin-bottom: 1rem;
+	  p {
+		margin: 1rem 0rem;
+	  }
+	  li {
+		margin: 0.5rem;
+	  }
+	}
+  
+	.example-habit-building {
+	  display: flex;
+	  flex-direction: column;
+	  overflow-x: auto;
+	  margin-top: 2rem;
+	  margin-bottom: 1rem;
+		.step-next {
+			background-color:lighten($peach, 4%);
+			border-radius: 0.5rem;
+			padding: 1.5rem;
+			min-width: 250px;
+			margin-bottom: 1rem;
+		}
+	}
+	li {
+		list-style: none;
+	}
+  }
+  
+  

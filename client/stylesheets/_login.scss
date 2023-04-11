@@ -1,0 +1,43 @@
+.login-box {
+  height: 300px;
+  width: 500px;
+  background: $lightgreen;
+  border-radius: 2rem;
+	margin: 2rem 1rem;
+	
+	form {
+    display:flex;
+  	flex-direction: column;
+  	align-items: center;
+		padding: 2rem;
+
+		input[type=text], input[type=password] {
+			background: $white;
+			color: $black;
+			border: none;
+			height: 40px;
+			border-radius: 15px;
+			text-align: center;
+			margin: 0.5rem;
+		}
+	}
+	input[type=submit] {
+		background: $darkgreen;
+		color: $peach;
+		padding: 10px 10px;
+		border-radius: 15px;
+		border: none;
+		font-size: 1vw;
+		margin: 1rem;
+		border: 1px solid $darkgreen;
+		box-shadow: 3px 3px 5px 2px $darkgreen-dark;
+	}
+	input[type=submit]:hover {
+		background: $darkgreen-light;
+		transition: 0.5s;
+	}
+	
+	input[type=submit]:active {
+		transform: translate(5px, 5px);
+	}
+}

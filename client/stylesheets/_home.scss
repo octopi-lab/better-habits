@@ -1,0 +1,27 @@
+.home {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	.welcome {
+		text-align: left;
+		padding: 2rem 2rem;
+		background: $lightgreen;
+		border-radius: 2rem;
+		margin: 2rem 1rem;
+		h1 {
+			font-size: 2rem;
+		}
+		h2 {
+			font-size: 1.5rem;
+			margin: 1rem 0rem;
+		}
+		iframe {
+			margin: 1rem 0rem;
+		}
+		p {
+			font-size: 1.5rem;
+			line-height: 1.5;
+			margin: 1rem 0rem;
+		}
+	}
+}
